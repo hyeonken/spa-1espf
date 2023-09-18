@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Cabecalho(){
     return(
         <>
@@ -5,9 +7,10 @@ export default function Cabecalho(){
           <h1>Vite+React coded by - RM551549</h1>
           <nav>
             <ul>
-              <li>item-1</li>
-              <li>item-2</li>
-              <li>item-3</li>
+              <li><Link to={"/"}>Home</Link></li>
+              <li><Link to={"./produtos"}>Produtos</Link></li>
+              <li><Link to={"/editar/produtos/1"}>Editar Produtos - 1</Link></li>
+              <li><Link to={"/editar/produtos/2"}>Editar Produtos - 2</Link></li>
             </ul>
           </nav>
         </header> 

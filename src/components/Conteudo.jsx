@@ -1,16 +1,32 @@
-export default function Conteudo(){
 
-    // let reactLogoAlt = "React-Logo"
+export default function Conteudo() {
 
-    return(
-        <section>
+  return (
+    <>
+      <section>
         <div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga nulla ad corporis exercitationem molestias cumque quae, explicabo hic quo corrupti ea repellendus temporibus expedita id? Porro quasi labore deleniti facere?</p>
-          <p>Fuga asperiores sint itaque officiis libero, nostrum quaerat in nesciunt laborum aliquid, accusamus quia vitae obcaecati architecto ea modi inventore, exercitationem nam illum similique ut. Excepturi reiciendis maiores earum repellat.</p>
-          <p>Obcaecati provident, pariatur adipisci perspiciatis minima magnam sequi esse numquam consequatur natus eum deleniti deserunt voluptatum atque velit soluta aliquid ea rerum veniam voluptate. Natus explicabo consequatur eius at rerum?</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+            libero itaque voluptate reiciendis labore cumque nemo quaerat quia
+            vero quo excepturi accusantium illum tempore, repellendus, hic
+            nostrum sed facilis aliquid.
+          </p>
+          <p>
+            Tempore nihil earum suscipit odio excepturi? Similique, fugit,
+            cupiditate eum dolor voluptatem facilis pariatur eos eveniet fuga
+            porro est vero! Corrupti repellat harum ipsa quidem non fugiat atque
+            vero sit!
+          </p>
+          <p>
+            Corrupti, aut odit assumenda animi ipsam possimus unde placeat est
+            ex numquam nemo minus amet delectus adipisci nulla repellendus
+            consequuntur maiores! Nam vero delectus rerum perspiciatis
+            architecto quae beatae voluptates?
+          </p>
           {/* <img src={reactLogo} alt={reactLogoAlt} />
           <img src={props.viteLogoProps} alt={props.viteLogoAltProps} /> */}
         </div>
-        </section>  
-    )
+      </section>
+    </>
+  );
 }

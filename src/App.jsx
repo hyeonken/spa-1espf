@@ -1,10 +1,9 @@
-import Cabecalho from "./components/Cabecalho";
+import Cabecalho from "./components/Cabecalho/Cabecalho";
 import Rodape from "./components/Rodape";
 import style from "./App.module.css";
-import {Outlet} from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 export default function App() {
-
 
   return (
     <>
@@ -13,9 +12,8 @@ export default function App() {
         {/* Iniciando a área do cabeçalho */}
         <Cabecalho />
 
-        {/* Iniciando a área do conteúdo */}
-        <Outlet/>
-
+          <Outlet/>
+       
         {/* Iniciando a área do rodapé */}
         <Rodape />
       </div>

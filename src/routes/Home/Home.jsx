@@ -1,4 +1,6 @@
 
+import img from "../../../public/black-home_640x360.png"
+
 export default function Home() {
   document.title = "HOME";
   
@@ -9,7 +11,7 @@ export default function Home() {
 
       <div>
         <figure>
-          <img src="/black-home_640x360.png" alt="Logo"/>
+          <img src={img} alt="Logo"/>
           <figcaption></figcaption>
         </figure>
       </div>

@@ -1,64 +1,61 @@
+import { useState } from "react";
 import "./ModalAction.scss"
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 export default function ModalAction(props) {
 
-    const navigation = useNavigate()
+    const navigation = useNavigate();
+
     //Realizando uma consulta para determinar o último ID do produto.
     let id;
-
-    fetch("http://localhost:5000/Produtos")
+    
+    fetch("http://localhost:5000/produtos")
     .then((response)=> response.json())
     .then((response)=>{
         id = response[response.length-1].id+1
     })
-    .catch(error=> console.log(error))
-
+    .catch(error=> console.log(error));
+    
     const[produto,setProduto] = useState({
         id:id,
         nome:'',
         desc:'',
         preco:''
     });
-
-    const handleChange = (e)=>{
-        
-        
-    //Destructuring
-    const {name,value} = e.target;
-
-    //Setando os dados diretamente no objeto atravé de SPREAD
-    setProduto({...produto,[name]:value});
     
-    }
-  
-  
+    const handleChange = (e)=>{
+        //Destructuring
+        const {name,value} = e.target;
+      //Setando os dados diretamente no objeto atravé de SPREAD
+        setProduto({...produto,[name]:value});
+      }
 
-    const handleSubmit = (e) =>{
+
+      const handleSubmit = (e) =>{
         e.preventDefault();
      
-          fetch("http://localhost:5000/produtos",{
+          fetch("http://localhost:5000/produtos/",{
             method:"POST",
             headers:{
               "Content-Type":"application/json"
             },
             body: JSON.stringify(produto)
           })
-          .then((response)=> console.log("Dados alterado com sucesso - STATUS CODE : " + response.status))
+          .then((response)=> console.log("Dados cadastrados com sucesso - STATUS CODE : " + response.status))
           .catch(error=> console.log(error));
   
-          //Fechando o modal
+          //Fechando o modal.
           props.setClose(false);
 
           //Redirect
           navigation("/produtos");
       }
 
+
     if(props.open){
         return (
             <div className="modal">
-            <h1>Editar Produtos</h1>
+            <h1>Cadastrar Produtos</h1>
               <div>
                 <form onSubmit={handleSubmit}>
                   <fieldset>
@@ -77,7 +74,7 @@ export default function ModalAction(props) {
                       <input type="text" name="preco" placeholder="Digite o preço do Produto." value={produto.preco} onChange={handleChange}/>
                     </div>
                     <div>
-                      <button>ADICIONAR</button>
+                      <button>CADASTRAR</button>
                     </div>
                   </fieldset>
                 </form>
@@ -86,4 +83,4 @@ export default function ModalAction(props) {
         </div>
         )
   }
-}
+} 
